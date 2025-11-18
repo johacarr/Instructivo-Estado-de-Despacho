@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estado de Despacho - Circuito de Entrega</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #34495e;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 25px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .highlight {
+      background: #ecf0f1;
+      padding: 10px;
+      border-left: 4px solid #2980b9;
+      margin: 15px 0;
+    }
+
+    .estado {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .pendiente { background: #f39c12; color: #fff; }
+    .remitir { background: #27ae60; color: #fff; }
+    .facturar { background: #c0392b; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ítem Estado de Despacho - Circuito de Entrega</h1>
+
+    <h2>Introducción</h2>
+    <p>El reporte Estado de Despacho permite ver en qué situación se encuentran las Notas de Venta que todavía no están completamente procesadas. Sirve para saber qué pedidos aún no se entregaron, cuáles falta remitir, y cuáles falta facturar.</p>
+
+    <h2>Responsable</h2>
+    <p>Encargado de depósito y Administrativo</p>
+
+    <h2>Ruta de acceso</h2>
+    <p>Ventas → Pedidos → Despacho → Estado de despacho</p>
+
+    <h2>Estados que puede tener una Nota de Venta (NV)</h2>
+    <div class="estado pendiente">
+      <strong>Pendiente:</strong> La NV todavía no fue ni remitida ni facturada completamente. Sigue en proceso.
+    </div>
+    <div class="estado remitir">
+      <strong>Por Remitir:</strong> La NV ya está facturada, pero falta enviarla o terminar de enviarlo al cliente.
+    </div>
+    <div class="estado facturar">
+      <strong>Por Facturar:</strong> La NV ya fue remitida, pero todavía no está facturada por completo.
+    </div>
+
+    <h2>Cómo está organizado el informe</h2>
+    <div class="highlight">
+      <p><strong>Área:</strong> Cada pedido aparece dentro del área operativa a la que pertenece.</p>
+      <p><strong>Cliente:</strong> Dentro de cada área, se listan los clientes con pedidos pendientes.</p>
+      <p><strong>Detalle del pedido:</strong></p>
+      <ul>
+        <li>Fecha</li>
+        <li>Número de NV</li>
+        <li>Producto (código y descripción)</li>
+        <li>Cantidad pedida</li>
+        <li>Cantidad remitida</li>
+        <li>Cantidad facturada</li>
+        <li>Saldos pendientes (por remitir o por facturar)</li>
+        <li>Información del cliente (nombre, zona, saldo, etc.)</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
